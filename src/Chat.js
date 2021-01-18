@@ -32,6 +32,22 @@ function Chat({ messages }) {
     scrollToBottom();
   };
 
+  // let messagesToRender;
+
+  // if (messages) {
+  //   messagesToRender = messages.map((message) =>
+  //     messages.map((message) => (
+  //       <p className={`chat__message ${message.received && "chat__reciever"}`}>
+  //         <span className="chat__name">{message.name}</span>
+  //         {message.message}
+  //         <span className="chat__timestamp">{message.timestamp}</span>
+  //       </p>
+  //     ))
+  //   );
+  // }
+
+  // console.log(messagesToRender);
+
   return (
     <div className="chat">
       <div className="chat__header">

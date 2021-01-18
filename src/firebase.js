@@ -1,8 +1,14 @@
-const firebaseConfig = {
-  apiKey: "AIzaSyCLkWgmO5ieGksRKV-FmqvxQGdSWt7Le-o",
-  authDomain: "whatsapp-mern-fa793.firebaseapp.com",
-  projectId: "whatsapp-mern-fa793",
-  storageBucket: "whatsapp-mern-fa793.appspot.com",
-  messagingSenderId: "113505839394",
-  appId: "1:113505839394:web:b82b16c58bebfcf8055d7b",
-};
+import firebase from "firebase/app";
+import "firebase/auth";
+
+const app = firebase.initializeApp({
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+});
+
+export const auth = app.auth();
+export default app;
