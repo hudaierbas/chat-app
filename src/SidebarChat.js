@@ -1,14 +1,26 @@
 import { Avatar } from "@material-ui/core";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./SidebarChat.css";
 
-function SidebarChat() {
+function SidebarChat({ messages }) {
+  const [lastMessage, setLastMessage] = useState("");
+
+  useEffect(() => {
+    messages.map((l, i, arr) => {
+      if (arr.length - 1 === i) {
+        setLastMessage(l);
+      }
+    });
+  }, [messages]);
+
   return (
     <div className="sidebarChat">
       <Avatar />
       <div className="sidebarChat__info">
         <h2>Test Room</h2>
-        <p>last message of the room</p>
+        <p>
+          {lastMessage.message} {lastMessage.timestamp}
+        </p>
       </div>
     </div>
   );

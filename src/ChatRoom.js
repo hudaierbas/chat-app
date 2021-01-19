@@ -30,11 +30,9 @@ function ChatRoom() {
     };
   }, [messages]);
 
-  console.log(messages);
-
   return (
     <>
-      <Sidebar />
+      <Sidebar messages={messages} />
       <Chat messages={messages} />
     </>
   );

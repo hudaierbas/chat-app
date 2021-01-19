@@ -18,7 +18,7 @@ function Login() {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      history.push("/chatroom");
+      history.push("/");
     } catch {
       setError("Failed to sign in");
     }
@@ -42,7 +42,7 @@ function Login() {
         </button>
       </form>
       <div>
-        Already have an account? <Link to="/login">Sign Up</Link>
+        Already have an account? <Link to="/signup">Sign Up</Link>
       </div>
     </div>
   );

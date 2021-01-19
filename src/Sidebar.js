@@ -9,7 +9,7 @@ import SidebarChat from "./SidebarChat";
 import { useAuth } from "./context/AuthContext";
 import { useHistory } from "react-router-dom";
 
-function Sidebar() {
+function Sidebar({ messages }) {
   const { currentUser, logout } = useAuth();
   const [error, setError] = useState("");
   const history = useHistory();
@@ -66,7 +66,7 @@ function Sidebar() {
         </div>
       </div>
       <div className="sidebar__chats">
-        <SidebarChat />
+        <SidebarChat messages={messages} />
       </div>
     </div>
   );
